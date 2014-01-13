@@ -6,32 +6,14 @@ body {
 
 .jumbotron {
   position: relative;
+  direction: rtl;
 }
 
-.btn-capitalize {
-  letter-spacing: 1px;
-  text-transform: capitalize;
+.pager {
+  font-size: 15px
 }
 
-.vs {
-  font-size: 16px;
-}
-
-.player-name {
-  line-height: 20px;
-
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.team {
-  font-weight: 600;
-}
-
-.blue {
-  color: blue;
-}
-
-.red {
-  color: red;
+.interpretation {
+  font-size: large;
+  color: #187F99;
 }
