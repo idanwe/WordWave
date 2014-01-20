@@ -6,6 +6,20 @@
   </div>
 </nav>
 
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    {{currentLetter}} <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li ng-repeat="(letter, letterWords) in letters" ng-click="switchLetter(letter)">
+      <a>
+        {{letter}}
+        <span class="badge pull-right">{{letter.words.length}}</span>
+      </a>
+     </li>
+  </ul>
+</div>
+
 <div class="jumbotron center-block text-center">
   <div class="letter">
     <h3>{{currentLetter}} <small>({{currentWordIndex}}/{{words.length - 1}})</small></h3>
@@ -38,4 +52,6 @@
       <a ng-click="previousWord()">הקודם &larr;</a>
     </li>
   </ul>
+
+
 </div>

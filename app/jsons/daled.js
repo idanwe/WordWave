@@ -1,4 +1,4 @@
-[
+window.daled = [
   { "word": "ד' אמות", "interpretation": "מקום מצומצם, הסביבה הקרובה לאדם." },
   { "word": "דא עקא", "interpretation": "זו הצרה." },
   { "word": "דאבה", "interpretation": "צער, יגון, דכדוך, תוגה, נכאים." },
