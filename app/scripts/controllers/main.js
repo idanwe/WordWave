@@ -9,7 +9,7 @@ angular.module('WordWaveApp')
       "ד": window.daled,
       "ה": window.hei,
       "ו": window.vav,
-      "ז": window.zai,
+      "ז": window.zain,
       "ח": window.het,
       "ט": window.tet,
       "י": window.yud,
