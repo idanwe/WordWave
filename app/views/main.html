@@ -6,12 +6,10 @@
   </div>
 </nav>
 
-<select ng-model="currentLetter" ng-change="switchLetter()" ng-options="letter as letter for (letter, letterWords) in letters"></select>
-
 <div class="jumbotron center-block text-center">
   <div class="letter">
     <h3>
-      {{currentLetter}}
+      <select ng-model="currentLetter" ng-change="switchLetter()" ng-options="letter as letter for (letter, letterWords) in letters"></select>
       <small>
         (
         {{words.length}} /
