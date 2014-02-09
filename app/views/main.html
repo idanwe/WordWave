@@ -6,32 +6,28 @@
   </div>
 </nav>
 
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    {{currentLetter}} <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li ng-repeat="(letter, letterWords) in letters" ng-click="switchLetter(letter)">
-      <a>
-        {{letter}}
-        <span class="badge pull-right">{{letter.words.length}}</span>
-      </a>
-     </li>
-  </ul>
-</div>
+<select ng-model="currentLetter" ng-change="switchLetter()" ng-options="letter as letter for (letter, letterWords) in letters"></select>
 
 <div class="jumbotron center-block text-center">
   <div class="letter">
-    <h3>{{currentLetter}} <small>({{currentWordIndex}}/{{words.length - 1}})</small></h3>
+    <h3>
+      {{currentLetter}}
+      <small>
+        (
+        {{words.length}} /
+         <input type="number" ng-model="currentWordIndex" min="1" max="{{words.length}}">
+        )
+      </small>
+    </h3>
     <div class="progress">
       <div class="progress-bar" ng-class="{ 'progress-bar-info': progressPrecentes() != 100, 'progress-bar-success': progressPrecentes() == 100 }" role="progressbar" aria-valuenow="{{progressPrecentes()}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressPrecentes()}}%;">
-        {{currentWordIndex}}/{{words.length - 1}}
+        {{currentWordIndex}}/{{words.length}}
       </div>
     </div>
   </div>
 
   <div class="word">
-    {{words[currentWordIndex].word}}
+    {{words[currentWordIndex - 1].word}}
   </div>
 
   <div>
@@ -40,7 +36,7 @@
       <span ng-show="showInterpretation">הסתר</span>
     </button>
     <span class="interpretation" ng-show="showInterpretation">
-      {{words[currentWordIndex].interpretation}}
+      {{words[currentWordIndex - 1].interpretation}}
     </span>
   </div>
 
@@ -52,6 +48,5 @@
       <a ng-click="previousWord()">הקודם &larr;</a>
     </li>
   </ul>
-
 
 </div>
