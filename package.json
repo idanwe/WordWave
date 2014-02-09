@@ -6,7 +6,8 @@
     "url": "https://github.com/idanwe/WordWave.git"
   },
   "dependencies": {
-    "hapi": "1.14.x",
+    "coffee-script": "1.6.x",
+    "hapi": "2.1.x",
     "bower": "1.2.x"
   },
   "devDependencies": {
@@ -53,6 +54,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/coffee-script/bin/coffee -o ./dist -c ./server; ./node_modules/bower/bin/bower install"
   }
 }
